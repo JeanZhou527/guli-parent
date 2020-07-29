@@ -35,7 +35,7 @@ public class R {
         return r;
     }
 
-    //失败静态方法
+    //失败的静态方法
     public static R error() {
         R r = new R();
         r.setSuccess(false);

@@ -20,7 +20,8 @@ public class SwaggerConfig {
                 .groupName("webApi")
                 .apiInfo(webApiInfo())
                 .select()
-                .paths(Predicates.not(PathSelectors.regex("/admin/.*")))
+                //如果路径中包含/admin，在进行swagger测试时，这个接口是不会显示在http://localhost:端口号/swagger-ui.html页的
+//                .paths(Predicates.not(PathSelectors.regex("/admin/.*")))
                 .paths(Predicates.not(PathSelectors.regex("/error.*")))
                 .build();
 

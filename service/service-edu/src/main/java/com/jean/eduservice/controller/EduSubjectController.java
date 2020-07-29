@@ -21,7 +21,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduservice/edu-subject")
-@CrossOrigin //可以跨域
+//@CrossOrigin//可以跨域
 public class EduSubjectController {
 
     @Autowired

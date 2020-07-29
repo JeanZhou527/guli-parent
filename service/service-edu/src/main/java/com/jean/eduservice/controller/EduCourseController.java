@@ -28,7 +28,8 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduservice/edu-course")
-@CrossOrigin
+//如果开启了gateway网关服务并做了统一跨域处理，可以不要加上这个注解@CrossOrigin
+//@CrossOrigin
 public class EduCourseController {
 
     @Autowired

@@ -2,4 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jean.educenter.mapper.UcenterMemberMapper">
 
+<!--查询某一天的注册人数-->
+    <select id="countRegisterDay" resultType="java.lang.Integer">
+        select count(*) from ucenter_member uc where DATE(uc.gmt_create)= #{day}
+        <!--如果是一个参数可以随便自定义，#{自定义名}
+        如果有多个参数：方式一： #{0}，#{1}...
+        方式二：在mapper接口中的方法里的参数前添加注解 @Param("自定义的名称")  xml文件上的写法就是 # {"自定义名称"}
+         mapper接口中的方法 Integer countRegisterDay(@Param("aa")String day1,@Param("bb")String day2);
+
+        -->
+    </select>
 </mapper>

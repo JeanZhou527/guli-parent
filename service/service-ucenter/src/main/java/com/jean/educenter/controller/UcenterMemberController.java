@@ -3,6 +3,7 @@ package com.jean.educenter.controller;
 
 import com.jean.commonutils.JwtUtils;
 import com.jean.commonutils.R;
+import com.jean.commonutils.ordervo.UcenterMemberOrder;
 import com.jean.educenter.entity.UcenterMember;
 import com.jean.educenter.entity.vo.RegisterVo;
 import com.jean.educenter.service.UcenterMemberService;
@@ -21,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
  * @since 2020-06-19
  */
 @RestController
-@CrossOrigin
+//@CrossOrigin
 @RequestMapping("/educenter/member")
 public class UcenterMemberController {
 
@@ -56,15 +57,38 @@ public class UcenterMemberController {
         return R.ok().data("userInfo",member);
     }
 
-    //根据token字符串（id）获取用户信息
+    //根据token字符串中的memberId获取用户信息
     @PostMapping("/getInfoUc/{id}")
-    public R getInfo(@PathVariable String id) {
+    public UcenterMember getInfo(@PathVariable String id) {
         //根据用户id获取用户信息
         UcenterMember ucenterMember = memberService.getById(id);
         UcenterMember memeber = new UcenterMember();
         BeanUtils.copyProperties(ucenterMember,memeber);
-        return R.ok().data("memberInfo",memeber);
+//        return R.ok().data("memberInfo",memeber);
+        return memeber;
     }
+
+    //5、根据用户id，获取用户信息
+    @PostMapping("/getUserInfo/{id}")
+    public UcenterMemberOrder getUserInfo(@PathVariable String id) {
+
+        //根据用户id获取用户信息
+        UcenterMember ucenterMember = memberService.getById(id);
+        UcenterMemberOrder memeber = new UcenterMemberOrder();
+        //把UcenterMember赋值给 UcenterMemberOrder
+        BeanUtils.copyProperties(ucenterMember,memeber);
+        return memeber;
+    }
+
+
+    // 查询某一天的注册人数
+    @GetMapping("/countRegister/{day}")
+    public R countRegister(@PathVariable("day") String day)
+    {
+        Integer count=memberService.countRegister(day);
+        return R.ok().data("countRegister",count);
+    }
+
 
 
 }

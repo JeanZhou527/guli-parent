@@ -19,6 +19,8 @@
         <module>service-acl</module>
         <module>service-msm</module>
         <module>service-ucenter</module>
+        <module>service-order</module>
+        <module>service-statistics</module>
     </modules>
 
     <dependencies>
@@ -134,7 +136,12 @@
             <version>4.12</version>
         </dependency>
     </dependencies>
-<!--maven项目下，也可以加载xml文件-->
+<!--maven项目下，就可以加载xml文件 这是第一步  加载xml文件共三步 -->
+<!-- 第二步就是：在主启动类上添加注解@MapperScan("mapper接口文件的包路径") -->
+<!--@MapperScan("com.jean.educenter.mapper") 为了能够扫描到xml文件-->
+<!--第三步就是：在配置文件中配置xml文件的路径-->
+<!-- #配置mapper xml文件的路径
+mybatis-plus.mapper-locations=classpath:com/jean/staservice/mapper/xml/*.xml-->
     <build>
         <resources>
             <resource>

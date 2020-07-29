@@ -18,7 +18,7 @@ import java.util.HashMap;
 
 @RequestMapping("/api/ucenter/wx")
 @Controller  //只是请求地址，不需要返回数据，所以不用@RestController
-@CrossOrigin
+//@CrossOrigin
 public class WxApiController {
 
     @Autowired

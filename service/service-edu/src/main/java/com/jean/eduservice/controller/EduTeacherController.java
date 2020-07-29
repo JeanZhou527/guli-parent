@@ -28,9 +28,11 @@ import java.util.List;
  * @since 2020-04-22
  */
 @RestController
-@CrossOrigin //解决跨域问题
+//@CrossOrigin //解决跨域问题
 @RequestMapping("/eduservice/edu-teacher")
 public class EduTeacherController {
+//访问地址： http://localhost:8001/eduservice/edu-teacher/findAll
+//通过网关访问地址： http://localhost:8222/eduservice/edu-teacher/findAll
 
     @Autowired  //把EduTeacherService注入进来
    private EduTeacherService teacherService;
