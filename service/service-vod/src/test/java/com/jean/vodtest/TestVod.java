@@ -103,7 +103,7 @@ public class TestVod {
     public static void getPlayAuth() throws ClientException {
         //根据视频id，获取视频播放凭证
         //1、创建初始化对象
-        DefaultAcsClient client=InitObject.initVodClient("LTAI4GAsEY5HwsS2R56jZc8W","oGaEcWLBYXB76dlJcQd5NC9AWvIdDa");
+        DefaultAcsClient client=InitObject.initVodClient("LTAI4GAsEY5HwsS2R56jZc8W","请登录自己的阿里云中查看keysecret");
 
         //2、创建获取视频凭证request和response
         GetVideoPlayAuthRequest request = new GetVideoPlayAuthRequest();
@@ -125,7 +125,7 @@ public class TestVod {
        //根据视频id，获取视频播放地址   如果该视频不是加密视频的话，就可以直接播放了，
        //如果是加密视频还需要获得播放凭证。
        //1、创建初始化对象
-       DefaultAcsClient client=InitObject.initVodClient("LTAI4GAsEY5HwsS2R56jZc8W","oGaEcWLBYXB76dlJcQd5NC9AWvIdDa");
+       DefaultAcsClient client=InitObject.initVodClient("LTAI4GAsEY5HwsS2R56jZc8W","请登录自己的阿里云中查看keysecret");
 
        //2创建获取视频地址request和response
        GetPlayInfoRequest request=new GetPlayInfoRequest();
