@@ -16,7 +16,7 @@ public class TestVod {
     //账号AK信息请填写(必选)
     private static final String accessKeyId = "LTAI4GAsEY5HwsS2R56jZc8W";
     //账号AK信息请填写(必选)
-    private static final String accessKeySecret = "oGaEcWLBYXB76dlJcQd5NC9AWvIdDa";
+    private static final String accessKeySecret = "请登录自己的阿里云中查看keysecret";
 
     public static void main(String[] args) throws ClientException {
 
