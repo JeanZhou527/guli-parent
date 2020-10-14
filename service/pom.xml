@@ -133,7 +133,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.1</version>
         </dependency>
     </dependencies>
 <!--maven项目下，就可以加载xml文件 这是第一步  加载xml文件共三步 -->
